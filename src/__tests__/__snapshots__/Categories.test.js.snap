@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories component Categories component renders a list of categories 1`] = `
+<Categories
+  categories={
+    Array [
+      Object {
+        "id": 1,
+        "title": "JavaScript",
+      },
+      Object {
+        "id": 2,
+        "title": "Python",
+      },
+    ]
+  }
+>
+  <ul
+    className="sidebar"
+  >
+    <Link
+      key="1"
+      to="/category/1"
+    >
+      <LinkAnchor
+        href="/category/1"
+        navigate={[Function]}
+      >
+        <a
+          href="/category/1"
+          onClick={[Function]}
+        >
+          <li>
+            JavaScript
+          </li>
+        </a>
+      </LinkAnchor>
+    </Link>
+    <Link
+      key="2"
+      to="/category/2"
+    >
+      <LinkAnchor
+        href="/category/2"
+        navigate={[Function]}
+      >
+        <a
+          href="/category/2"
+          onClick={[Function]}
+        >
+          <li>
+            Python
+          </li>
+        </a>
+      </LinkAnchor>
+    </Link>
+    <Link
+      to="/"
+    >
+      <LinkAnchor
+        href="/"
+        navigate={[Function]}
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          <li>
+            All Posts
+          </li>
+        </a>
+      </LinkAnchor>
+    </Link>
+  </ul>
+</Categories>
+`;

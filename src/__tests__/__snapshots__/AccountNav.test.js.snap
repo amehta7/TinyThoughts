@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountNav component Renders the Signin and Signup buttons when logged out 1`] = `
+<Memo()>
+  <div
+    className="account-nav"
+  >
+    <ul>
+      <Link
+        to="/signin"
+      >
+        <LinkAnchor
+          href="/signin"
+          navigate={[Function]}
+        >
+          <a
+            href="/signin"
+            onClick={[Function]}
+          >
+            <li>
+              Signin
+            </li>
+          </a>
+        </LinkAnchor>
+      </Link>
+      <Link
+        to="/signup"
+      >
+        <LinkAnchor
+          href="/signup"
+          navigate={[Function]}
+        >
+          <a
+            href="/signup"
+            onClick={[Function]}
+          >
+            <li>
+              Signup
+            </li>
+          </a>
+        </LinkAnchor>
+      </Link>
+    </ul>
+  </div>
+</Memo()>
+`;
+
+exports[`AccountNav component Renders the Signout button & user's name when logged in 1`] = `
+<Memo()>
+  <div
+    className="account-nav"
+  >
+    <h4>
+      Joe Mockery
+    </h4>
+    <ul>
+      <li
+        onClick={[Function]}
+      >
+        Signout
+      </li>
+    </ul>
+  </div>
+</Memo()>
+`;

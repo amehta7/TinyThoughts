@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post component Renders a post correctly 1`] = `
+<Memo()
+  post={
+    Object {
+      "author": Object {
+        "id": 1,
+        "name": "Joe Mockery",
+      },
+      "categories": Object {
+        "id": 1,
+        "title": "Python",
+      },
+      "content": "This is such an incredible post that I almost forgot to post it",
+      "id": 2,
+      "timestamp": "2020-03-25T13:39:30.752Z",
+      "title": "This is an amazing post",
+    }
+  }
+>
+  <div
+    className="post"
+  >
+    <h1>
+      This is an amazing post
+    </h1>
+    <h3>
+      by 
+      <Link
+        to="/author/1"
+      >
+        <LinkAnchor
+          href="/author/1"
+          navigate={[Function]}
+        >
+          <a
+            href="/author/1"
+            onClick={[Function]}
+          >
+            Joe Mockery
+          </a>
+        </LinkAnchor>
+      </Link>
+       |
+       
+      <Link
+        to="/category/1"
+      >
+        <LinkAnchor
+          href="/category/1"
+          navigate={[Function]}
+        >
+          <a
+            href="/category/1"
+            onClick={[Function]}
+          >
+            Python
+          </a>
+        </LinkAnchor>
+      </Link>
+       | Posted on 
+      Wednesday, March 25th 2020, 7:09:30 pm
+    </h3>
+    <p>
+      This is such an incredible post that I almost forgot to post it
+    </p>
+    <DeletePostButton
+      onConfirm={[Function]}
+    >
+      <div
+        className="delete-post-btn"
+      >
+        <button
+          className="delete-btn"
+          onClick={[Function]}
+        >
+          Delete?
+        </button>
+      </div>
+    </DeletePostButton>
+  </div>
+</Memo()>
+`;

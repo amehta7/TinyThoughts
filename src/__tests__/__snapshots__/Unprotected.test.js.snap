@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unprotected Component Renders components when signed out 1`] = `
+<Memo()>
+  <Route
+    render={[Function]}
+  >
+    <h1>
+      DEMO CONTENT
+    </h1>
+  </Route>
+</Memo()>
+`;

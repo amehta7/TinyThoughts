@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text component Renders a controlled component 1`] = `
+<div
+  className="text-box"
+>
+  <span
+    className="label"
+  >
+    Your comments
+  </span>
+  <textarea
+    maxLength={200}
+    onChange={[Function]}
+    value="This is a text box"
+  />
+</div>
+`;
+
+exports[`Text component Renders a red border when hasError is set to true 1`] = `
+<div
+  className="text-box hasError"
+>
+  <span
+    className="label"
+  >
+    Your comments
+  </span>
+  <textarea
+    maxLength={200}
+    onChange={[Function]}
+    value="This is a text box"
+  />
+</div>
+`;

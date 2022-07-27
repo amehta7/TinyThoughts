@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select component Renders a controlled component 1`] = `
+<div
+  className="select-list"
+>
+  <span
+    className="label"
+  >
+    Pick a fruit
+  </span>
+  <select
+    defaultValue="Select"
+    onChange={[MockFunction]}
+  >
+    <option
+      disabled={true}
+    >
+      Select
+    </option>
+    <option
+      key="1"
+      value={1}
+    >
+      Apple
+    </option>
+    <option
+      key="2"
+      value={2}
+    >
+      Kiwi
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Select component Renders a red border when hasError is set to true 1`] = `
+<div
+  className="select-list hasError"
+>
+  <span
+    className="label"
+  >
+    Pick a fruit
+  </span>
+  <select
+    defaultValue="Select"
+    onChange={[Function]}
+  >
+    <option
+      disabled={true}
+    >
+      Select
+    </option>
+    <option
+      key="1"
+      value={1}
+    >
+      Apple
+    </option>
+    <option
+      key="2"
+      value={2}
+    >
+      Kiwi
+    </option>
+  </select>
+</div>
+`;

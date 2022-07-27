@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component Renders a controlled component 1`] = `
+<div
+  className="input-box"
+>
+  <span
+    className="label"
+  >
+    Username
+  </span>
+  <input
+    onChange={[MockFunction]}
+    type="email"
+    value="joe@mockery.com"
+  />
+</div>
+`;
+
+exports[`Input component Renders a red border when hasError is set to true 1`] = `
+<div
+  className="input-box hasError"
+>
+  <span
+    className="label"
+  >
+    Username
+  </span>
+  <input
+    onChange={[Function]}
+    type="email"
+    value="joe@mockery.com"
+  />
+</div>
+`;

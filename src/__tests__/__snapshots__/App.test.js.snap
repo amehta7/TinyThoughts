@@ -1,0 +1,1082 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Capstone - App Component App renders with stateful data 1`] = `
+<App>
+  <div
+    className="app"
+  >
+    <Header>
+      <div
+        className="header"
+      >
+        <div
+          className="app-title"
+        >
+          TinyThoughts
+        </div>
+        <div
+          className="app-nav"
+        >
+          <ul>
+            <Link
+              to="/"
+            >
+              <LinkAnchor
+                href="/"
+                navigate={[Function]}
+              >
+                <a
+                  href="/"
+                  onClick={[Function]}
+                >
+                  <li>
+                    Home
+                  </li>
+                </a>
+              </LinkAnchor>
+            </Link>
+            <Link
+              to="/add"
+            >
+              <LinkAnchor
+                href="/add"
+                navigate={[Function]}
+              >
+                <a
+                  href="/add"
+                  onClick={[Function]}
+                >
+                  <li>
+                    New Post
+                  </li>
+                </a>
+              </LinkAnchor>
+            </Link>
+          </ul>
+        </div>
+        <Memo()>
+          <div
+            className="account-nav"
+          >
+            <ul>
+              <Link
+                to="/signin"
+              >
+                <LinkAnchor
+                  href="/signin"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/signin"
+                    onClick={[Function]}
+                  >
+                    <li>
+                      Signin
+                    </li>
+                  </a>
+                </LinkAnchor>
+              </Link>
+              <Link
+                to="/signup"
+              >
+                <LinkAnchor
+                  href="/signup"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/signup"
+                    onClick={[Function]}
+                  >
+                    <li>
+                      Signup
+                    </li>
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </ul>
+          </div>
+        </Memo()>
+      </div>
+    </Header>
+    <div
+      className="main"
+    >
+      <Switch>
+        <Route
+          computedMatch={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
+          exact={true}
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          path="/"
+        >
+          <Memo()>
+            <Categories
+              categories={
+                Array [
+                  Object {
+                    "id": 1,
+                    "title": "JavaScript",
+                  },
+                  Object {
+                    "id": 2,
+                    "title": "React",
+                  },
+                  Object {
+                    "id": 3,
+                    "title": "Node.js",
+                  },
+                ]
+              }
+            >
+              <ul
+                className="sidebar"
+              >
+                <Link
+                  key="1"
+                  to="/category/1"
+                >
+                  <LinkAnchor
+                    href="/category/1"
+                    navigate={[Function]}
+                  >
+                    <a
+                      href="/category/1"
+                      onClick={[Function]}
+                    >
+                      <li>
+                        JavaScript
+                      </li>
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  key="2"
+                  to="/category/2"
+                >
+                  <LinkAnchor
+                    href="/category/2"
+                    navigate={[Function]}
+                  >
+                    <a
+                      href="/category/2"
+                      onClick={[Function]}
+                    >
+                      <li>
+                        React
+                      </li>
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  key="3"
+                  to="/category/3"
+                >
+                  <LinkAnchor
+                    href="/category/3"
+                    navigate={[Function]}
+                  >
+                    <a
+                      href="/category/3"
+                      onClick={[Function]}
+                    >
+                      <li>
+                        Node.js
+                      </li>
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  to="/"
+                >
+                  <LinkAnchor
+                    href="/"
+                    navigate={[Function]}
+                  >
+                    <a
+                      href="/"
+                      onClick={[Function]}
+                    >
+                      <li>
+                        All Posts
+                      </li>
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </ul>
+            </Categories>
+            <div
+              className="content"
+            >
+              <Memo()
+                key="9"
+                post={
+                  Object {
+                    "author": Object {
+                      "dateJoined": "2019-11-28T10:59:49.437Z",
+                      "email": "homer@springfield.com",
+                      "id": 1,
+                      "name": "Homer Simpson",
+                      "password": "$2b$10$/MR28AAVtvOL4eQkMimtvezwTzOve4BSDxNtd9ST9rYYjnhfp9Ayi",
+                    },
+                    "authorId": 1,
+                    "categories": Object {
+                      "id": 10,
+                      "title": "Python",
+                    },
+                    "categoriesId": "10",
+                    "content": "What
+an
+amazing
+system!",
+                    "id": 9,
+                    "timestamp": "2020-03-24T14:24:53.506Z",
+                    "title": "Thoughts",
+                  }
+                }
+              >
+                <div
+                  className="post"
+                >
+                  <h1>
+                    Thoughts
+                  </h1>
+                  <h3>
+                    by 
+                    <Link
+                      to="/author/1"
+                    >
+                      <LinkAnchor
+                        href="/author/1"
+                        navigate={[Function]}
+                      >
+                        <a
+                          href="/author/1"
+                          onClick={[Function]}
+                        >
+                          Homer Simpson
+                        </a>
+                      </LinkAnchor>
+                    </Link>
+                     |
+                     
+                    <Link
+                      to="/category/10"
+                    >
+                      <LinkAnchor
+                        href="/category/10"
+                        navigate={[Function]}
+                      >
+                        <a
+                          href="/category/10"
+                          onClick={[Function]}
+                        >
+                          Python
+                        </a>
+                      </LinkAnchor>
+                    </Link>
+                     | Posted on 
+                    Tuesday, March 24th 2020, 7:54:53 pm
+                  </h3>
+                  <p>
+                    What
+an
+amazing
+system!
+                  </p>
+                </div>
+              </Memo()>
+              <Memo()
+                key="7"
+                post={
+                  Object {
+                    "author": Object {
+                      "dateJoined": "2019-11-28T10:59:49.437Z",
+                      "email": "homer@springfield.com",
+                      "id": 1,
+                      "name": "Homer Simpson",
+                      "password": "$2b$10$/MR28AAVtvOL4eQkMimtvezwTzOve4BSDxNtd9ST9rYYjnhfp9Ayi",
+                    },
+                    "authorId": 1,
+                    "categories": Object {
+                      "id": 1,
+                      "title": "JavaScript",
+                    },
+                    "categoriesId": "1",
+                    "content": "So, I was thinking..
+
+What do we do about all nice things that we used to enjoy earlier.",
+                    "id": 7,
+                    "timestamp": "2020-03-24T14:05:11.537Z",
+                    "title": "New post idea",
+                  }
+                }
+              >
+                <div
+                  className="post"
+                >
+                  <h1>
+                    New post idea
+                  </h1>
+                  <h3>
+                    by 
+                    <Link
+                      to="/author/1"
+                    >
+                      <LinkAnchor
+                        href="/author/1"
+                        navigate={[Function]}
+                      >
+                        <a
+                          href="/author/1"
+                          onClick={[Function]}
+                        >
+                          Homer Simpson
+                        </a>
+                      </LinkAnchor>
+                    </Link>
+                     |
+                     
+                    <Link
+                      to="/category/1"
+                    >
+                      <LinkAnchor
+                        href="/category/1"
+                        navigate={[Function]}
+                      >
+                        <a
+                          href="/category/1"
+                          onClick={[Function]}
+                        >
+                          JavaScript
+                        </a>
+                      </LinkAnchor>
+                    </Link>
+                     | Posted on 
+                    Tuesday, March 24th 2020, 7:35:11 pm
+                  </h3>
+                  <p>
+                    So, I was thinking..
+
+What do we do about all nice things that we used to enjoy earlier.
+                  </p>
+                </div>
+              </Memo()>
+            </div>
+          </Memo()>
+        </Route>
+      </Switch>
+    </div>
+  </div>
+</App>
+`;
+
+exports[`Capstone - App Component Navigating to the /add route redirects to the signin page 1`] = `
+<App>
+  <div
+    className="app"
+  >
+    <Header>
+      <div
+        className="header"
+      >
+        <div
+          className="app-title"
+        >
+          TinyThoughts
+        </div>
+        <div
+          className="app-nav"
+        >
+          <ul>
+            <Link
+              to="/"
+            >
+              <LinkAnchor
+                href="/"
+                navigate={[Function]}
+              >
+                <a
+                  href="/"
+                  onClick={[Function]}
+                >
+                  <li>
+                    Home
+                  </li>
+                </a>
+              </LinkAnchor>
+            </Link>
+            <Link
+              to="/add"
+            >
+              <LinkAnchor
+                href="/add"
+                navigate={[Function]}
+              >
+                <a
+                  href="/add"
+                  onClick={[Function]}
+                >
+                  <li>
+                    New Post
+                  </li>
+                </a>
+              </LinkAnchor>
+            </Link>
+          </ul>
+        </div>
+        <Memo()>
+          <div
+            className="account-nav"
+          >
+            <ul>
+              <Link
+                to="/signin"
+              >
+                <LinkAnchor
+                  href="/signin"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/signin"
+                    onClick={[Function]}
+                  >
+                    <li>
+                      Signin
+                    </li>
+                  </a>
+                </LinkAnchor>
+              </Link>
+              <Link
+                to="/signup"
+              >
+                <LinkAnchor
+                  href="/signup"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/signup"
+                    onClick={[Function]}
+                  >
+                    <li>
+                      Signup
+                    </li>
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </ul>
+          </div>
+        </Memo()>
+      </div>
+    </Header>
+    <div
+      className="main"
+    >
+      <Switch>
+        <Memo()
+          computedMatch={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/signin",
+              "url": "/signin",
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/signin",
+              "search": "",
+              "state": Object {
+                "from": Object {
+                  "hash": "",
+                  "pathname": "/add",
+                  "search": "",
+                  "state": undefined,
+                },
+              },
+            }
+          }
+          path="/signin"
+        >
+          <Route
+            computedMatch={
+              Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "/signin",
+                "url": "/signin",
+              }
+            }
+            location={
+              Object {
+                "hash": "",
+                "pathname": "/signin",
+                "search": "",
+                "state": Object {
+                  "from": Object {
+                    "hash": "",
+                    "pathname": "/add",
+                    "search": "",
+                    "state": undefined,
+                  },
+                },
+              }
+            }
+            path="/signin"
+            render={[Function]}
+          >
+            <Signin>
+              <div
+                className="sign-in"
+              >
+                <h2>
+                  Signin
+                </h2>
+                <div
+                  className="signin-form"
+                >
+                  <Input
+                    hasError={false}
+                    label="E-Mail"
+                    onInput={[Function]}
+                    type="text"
+                    value=""
+                  >
+                    <div
+                      className="input-box"
+                    >
+                      <span
+                        className="label"
+                      >
+                        E-Mail
+                      </span>
+                      <input
+                        onChange={[Function]}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </Input>
+                  <Input
+                    hasError={false}
+                    label="Password"
+                    onInput={[Function]}
+                    type="password"
+                    value=""
+                  >
+                    <div
+                      className="input-box"
+                    >
+                      <span
+                        className="label"
+                      >
+                        Password
+                      </span>
+                      <input
+                        onChange={[Function]}
+                        type="password"
+                        value=""
+                      />
+                    </div>
+                  </Input>
+                  <button
+                    onClick={[Function]}
+                  >
+                    Go!
+                  </button>
+                </div>
+              </div>
+            </Signin>
+          </Route>
+        </Memo()>
+      </Switch>
+    </div>
+  </div>
+</App>
+`;
+
+exports[`Capstone - App Component Navigating to the /add route when the user is signed in takes you to the add post form 1`] = `
+<App>
+  <div
+    className="app"
+  >
+    <Header>
+      <div
+        className="header"
+      >
+        <div
+          className="app-title"
+        >
+          TinyThoughts
+        </div>
+        <div
+          className="app-nav"
+        >
+          <ul>
+            <Link
+              to="/"
+            >
+              <LinkAnchor
+                href="/"
+                navigate={[Function]}
+              >
+                <a
+                  href="/"
+                  onClick={[Function]}
+                >
+                  <li>
+                    Home
+                  </li>
+                </a>
+              </LinkAnchor>
+            </Link>
+            <Link
+              to="/add"
+            >
+              <LinkAnchor
+                href="/add"
+                navigate={[Function]}
+              >
+                <a
+                  href="/add"
+                  onClick={[Function]}
+                >
+                  <li>
+                    New Post
+                  </li>
+                </a>
+              </LinkAnchor>
+            </Link>
+          </ul>
+        </div>
+        <Memo()>
+          <div
+            className="account-nav"
+          >
+            <h4>
+              Joe Rock
+            </h4>
+            <ul>
+              <li
+                onClick={[Function]}
+              >
+                Signout
+              </li>
+            </ul>
+          </div>
+        </Memo()>
+      </div>
+    </Header>
+    <div
+      className="main"
+    >
+      <Switch>
+        <Protected
+          computedMatch={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/add",
+              "url": "/add",
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/add",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          path="/add"
+        >
+          <Route
+            computedMatch={
+              Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "/add",
+                "url": "/add",
+              }
+            }
+            location={
+              Object {
+                "hash": "",
+                "pathname": "/add",
+                "search": "",
+                "state": undefined,
+              }
+            }
+            path="/add"
+            render={[Function]}
+          >
+            <Memo()>
+              <div
+                className="add-post"
+              >
+                <h2>
+                  New Post
+                </h2>
+                <div
+                  className="add-post-form"
+                >
+                  <Input
+                    hasError={false}
+                    label="Title"
+                    onInput={[Function]}
+                    type="text"
+                    value=""
+                  >
+                    <div
+                      className="input-box"
+                    >
+                      <span
+                        className="label"
+                      >
+                        Title
+                      </span>
+                      <input
+                        onChange={[Function]}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </Input>
+                  <Text
+                    hasError={false}
+                    label="Type in your thoughts in 200 characters or less"
+                    maxLength={200}
+                    onUpdate={[Function]}
+                    value=""
+                  >
+                    <div
+                      className="text-box"
+                    >
+                      <span
+                        className="label"
+                      >
+                        Type in your thoughts in 200 characters or less
+                      </span>
+                      <textarea
+                        maxLength={200}
+                        onChange={[Function]}
+                        value=""
+                      />
+                    </div>
+                  </Text>
+                  <div
+                    className="char-count"
+                  >
+                    0
+                     of 200 Characters
+                  </div>
+                  <Select
+                    hasError={false}
+                    label="Select a category"
+                    onSet={[Function]}
+                    options={Array []}
+                  >
+                    <div
+                      className="select-list"
+                    >
+                      <span
+                        className="label"
+                      >
+                        Select a category
+                      </span>
+                      <select
+                        defaultValue="Select"
+                        onChange={[Function]}
+                      >
+                        <option
+                          disabled={true}
+                        >
+                          Select
+                        </option>
+                      </select>
+                    </div>
+                  </Select>
+                  <button
+                    id="add-post-btn"
+                    onClick={[Function]}
+                  >
+                    + Add
+                  </button>
+                </div>
+              </div>
+            </Memo()>
+          </Route>
+        </Protected>
+      </Switch>
+    </div>
+  </div>
+</App>
+`;
+
+exports[`Capstone - App Component Navigating to the /signup route goes to the signup page 1`] = `
+<App>
+  <div
+    className="app"
+  >
+    <Header>
+      <div
+        className="header"
+      >
+        <div
+          className="app-title"
+        >
+          TinyThoughts
+        </div>
+        <div
+          className="app-nav"
+        >
+          <ul>
+            <Link
+              to="/"
+            >
+              <LinkAnchor
+                href="/"
+                navigate={[Function]}
+              >
+                <a
+                  href="/"
+                  onClick={[Function]}
+                >
+                  <li>
+                    Home
+                  </li>
+                </a>
+              </LinkAnchor>
+            </Link>
+            <Link
+              to="/add"
+            >
+              <LinkAnchor
+                href="/add"
+                navigate={[Function]}
+              >
+                <a
+                  href="/add"
+                  onClick={[Function]}
+                >
+                  <li>
+                    New Post
+                  </li>
+                </a>
+              </LinkAnchor>
+            </Link>
+          </ul>
+        </div>
+        <Memo()>
+          <div
+            className="account-nav"
+          >
+            <ul>
+              <Link
+                to="/signin"
+              >
+                <LinkAnchor
+                  href="/signin"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/signin"
+                    onClick={[Function]}
+                  >
+                    <li>
+                      Signin
+                    </li>
+                  </a>
+                </LinkAnchor>
+              </Link>
+              <Link
+                to="/signup"
+              >
+                <LinkAnchor
+                  href="/signup"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/signup"
+                    onClick={[Function]}
+                  >
+                    <li>
+                      Signup
+                    </li>
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </ul>
+          </div>
+        </Memo()>
+      </div>
+    </Header>
+    <div
+      className="main"
+    >
+      <Switch>
+        <Memo()
+          computedMatch={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/signup",
+              "url": "/signup",
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/signup",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          path="/signup"
+        >
+          <Route
+            computedMatch={
+              Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "/signup",
+                "url": "/signup",
+              }
+            }
+            location={
+              Object {
+                "hash": "",
+                "pathname": "/signup",
+                "search": "",
+                "state": undefined,
+              }
+            }
+            path="/signup"
+            render={[Function]}
+          >
+            <Signup>
+              <div
+                className="sign-up"
+              >
+                <h2>
+                  Signup
+                </h2>
+                <div
+                  className="signup-form"
+                >
+                  <Input
+                    hasError={false}
+                    label="Name"
+                    onInput={[Function]}
+                    type="text"
+                    value=""
+                  >
+                    <div
+                      className="input-box"
+                    >
+                      <span
+                        className="label"
+                      >
+                        Name
+                      </span>
+                      <input
+                        onChange={[Function]}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </Input>
+                  <Input
+                    hasError={false}
+                    label="E-Mail"
+                    onInput={[Function]}
+                    type="text"
+                    value=""
+                  >
+                    <div
+                      className="input-box"
+                    >
+                      <span
+                        className="label"
+                      >
+                        E-Mail
+                      </span>
+                      <input
+                        onChange={[Function]}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </Input>
+                  <Input
+                    hasError={false}
+                    label="Password"
+                    onInput={[Function]}
+                    type="password"
+                    value=""
+                  >
+                    <div
+                      className="input-box"
+                    >
+                      <span
+                        className="label"
+                      >
+                        Password
+                      </span>
+                      <input
+                        onChange={[Function]}
+                        type="password"
+                        value=""
+                      />
+                    </div>
+                  </Input>
+                  <Input
+                    hasError={false}
+                    label="Retype Password"
+                    onInput={[Function]}
+                    type="password"
+                    value=""
+                  >
+                    <div
+                      className="input-box"
+                    >
+                      <span
+                        className="label"
+                      >
+                        Retype Password
+                      </span>
+                      <input
+                        onChange={[Function]}
+                        type="password"
+                        value=""
+                      />
+                    </div>
+                  </Input>
+                  <button
+                    onClick={[Function]}
+                  >
+                    Done!
+                  </button>
+                </div>
+              </div>
+            </Signup>
+          </Route>
+        </Memo()>
+      </Switch>
+    </div>
+  </div>
+</App>
+`;

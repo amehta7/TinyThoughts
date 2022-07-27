@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Protected Component Renders protected components when signed in 1`] = `
+<Protected>
+  <Route
+    render={[Function]}
+  >
+    <h1>
+      DEMO CONTENT
+    </h1>
+  </Route>
+</Protected>
+`;

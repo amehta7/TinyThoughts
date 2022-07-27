@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddPost component Renders the AddPost component successfully 1`] = `
+<Memo()>
+  <div
+    className="add-post"
+  >
+    <h2>
+      New Post
+    </h2>
+    <div
+      className="add-post-form"
+    >
+      <Input
+        hasError={false}
+        label="Title"
+        onInput={[Function]}
+        type="text"
+        value=""
+      >
+        <div
+          className="input-box"
+        >
+          <span
+            className="label"
+          >
+            Title
+          </span>
+          <input
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </Input>
+      <Text
+        hasError={false}
+        label="Type in your thoughts in 200 characters or less"
+        maxLength={200}
+        onUpdate={[Function]}
+        value=""
+      >
+        <div
+          className="text-box"
+        >
+          <span
+            className="label"
+          >
+            Type in your thoughts in 200 characters or less
+          </span>
+          <textarea
+            maxLength={200}
+            onChange={[Function]}
+            value=""
+          />
+        </div>
+      </Text>
+      <div
+        className="char-count"
+      >
+        0
+         of 200 Characters
+      </div>
+      <Select
+        hasError={false}
+        label="Select a category"
+        onSet={[Function]}
+        options={
+          Array [
+            Object {
+              "id": 1,
+              "title": "JavaScript",
+            },
+            Object {
+              "id": 2,
+              "title": "Python",
+            },
+          ]
+        }
+      >
+        <div
+          className="select-list"
+        >
+          <span
+            className="label"
+          >
+            Select a category
+          </span>
+          <select
+            defaultValue="Select"
+            onChange={[Function]}
+          >
+            <option
+              disabled={true}
+            >
+              Select
+            </option>
+            <option
+              key="1"
+              value={1}
+            >
+              JavaScript
+            </option>
+            <option
+              key="2"
+              value={2}
+            >
+              Python
+            </option>
+          </select>
+        </div>
+      </Select>
+      <button
+        id="add-post-btn"
+        onClick={[Function]}
+      >
+        + Add
+      </button>
+    </div>
+  </div>
+</Memo()>
+`;

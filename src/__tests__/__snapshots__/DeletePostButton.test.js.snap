@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeletePostButton component DeletePostButton component renders & works correctly 1`] = `
+<DeletePostButton
+  onConfirm={[MockFunction]}
+>
+  <div
+    className="delete-post-btn"
+  >
+    <button
+      className="delete-btn"
+      onClick={[Function]}
+    >
+      Delete?
+    </button>
+  </div>
+</DeletePostButton>
+`;
+
+exports[`DeletePostButton component DeletePostButton component renders & works correctly 2`] = `
+<DeletePostButton
+  onConfirm={[MockFunction]}
+>
+  <div
+    className="delete-post-btn"
+  >
+    <button
+      className="delete-btn-yes"
+      onClick={[MockFunction]}
+    >
+      Yes
+    </button>
+    <button
+      className="delete-btn-no"
+      onClick={[Function]}
+    >
+      No
+    </button>
+  </div>
+</DeletePostButton>
+`;
