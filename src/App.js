@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './components/Header'
 import Posts from './components/Posts'
 import AddPost from './components/AddPost'
@@ -6,10 +6,15 @@ import Signin from './components/Signin'
 import Signup from './components/Signup'
 import NoMatch from './components/NoMatch'
 import Protected from './components/Protected'
-
+import Unprotected from './components/Unprotected'
+import { initUserState } from './store/actions/index'
+import { connect } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-const App = () => {
+const App = ({ user, onInitUserState }) => {
+  useEffect(() => {
+    onInitUserState()
+  }, [onInitUserState])
   return (
     <BrowserRouter>
       <div className='app'>
@@ -19,18 +24,22 @@ const App = () => {
             <Route exact path='/'>
               <Posts />
             </Route>
+            <Route path='/category/:categoryId'>
+              <Posts type='category' />
+            </Route>
 
-            <Protected path='/add'>
+            <Route path='/author/:authorId'>
+              <Posts type='author' />
+            </Route>
+            <Protected user={user} path='/add'>
               <AddPost />
             </Protected>
-            <Route path='/signin'>
+            <Unprotected user={user} path='/signin'>
               <Signin />
-            </Route>
-
-            <Route path='/signup'>
+            </Unprotected>
+            <Unprotected user={user} path='/signup'>
               <Signup />
-            </Route>
-
+            </Unprotected>
             <Route path='*'>
               <NoMatch />
             </Route>
@@ -41,12 +50,16 @@ const App = () => {
   )
 }
 
-export default App
+const mapStateToProps = (state) => {
+  return {
+    user: state.users.user,
+  }
+}
 
-// <Route path='/category/:categoryId'>
-//               <Posts type='category' />
-//             </Route>
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onInitUserState: () => dispatch(initUserState()),
+  }
+}
 
-//             <Route path='/author/:authorId'>
-//               <Posts type='author' />
-//             </Route>
+export default connect(mapStateToProps, mapDispatchToProps)(App)

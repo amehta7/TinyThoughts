@@ -1,32 +1,36 @@
 import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { signOut } from '../store/actions/index'
 
-const AccountNav = memo(({ user }) => {
+const AccountNav = memo(({ user, onSignOut }) => {
   return (
-    <div className='account-nav'>
-      {' '}
+    <React.Fragment>
       {!user ? (
-        <ul>
-          <li>
-            <Link to='/signin'>Signin</Link>
-          </li>
-          <li>
-            {' '}
-            <Link to='/signup'>Signup</Link>
-          </li>
-        </ul>
-      ) : (
-        <React.Fragment>
-          <h2>{user.name}</h2>
+        <div className='account-nav'>
           <ul>
             <li>
-              <Link to='/'>Signout</Link>
+              <Link to='/signin'>Signin</Link>
+            </li>
+            <li>
+              {' '}
+              <Link to='/signup'>Signup</Link>
             </li>
           </ul>
-        </React.Fragment>
+        </div>
+      ) : (
+        <div className='account-nav'>
+          <h4>{user.name}</h4>
+          <ul>
+            <li>
+              <Link to='/' onClick={() => onSignOut()}>
+                Signout
+              </Link>
+            </li>
+          </ul>
+        </div>
       )}
-    </div>
+    </React.Fragment>
   )
 })
 
@@ -36,9 +40,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, null)(AccountNav)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSignOut: () => dispatch(signOut()),
+  }
+}
 
-// <h4>user_name</h4>
-// <ul>
-//   <li>Signout</li>
-// </ul>
+export default connect(mapStateToProps, mapDispatchToProps)(AccountNav)

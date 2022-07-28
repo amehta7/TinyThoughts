@@ -6,16 +6,25 @@ import Post from './Post'
 import { connect } from 'react-redux'
 import {
   fetchPosts,
+  deletePost,
   fetchCategories,
   fetchPostsByAuthor,
   fetchPostsByCategory,
 } from '../store/actions/index'
 
-const Posts = memo((props, type) => {
+const Posts = memo((props, { type }) => {
   useEffect(() => {
-    props.onFetchPosts()
+    // props.onFetchPosts()
+    if (type === 'author') {
+      props.onFetchPostByAuthor(props.posts.authorId)
+    } else if (type === 'category') {
+      props.onFetchPostsByCategory(props.posts.categoriesId)
+    } else {
+      props.onFetchPosts()
+    }
+
     props.onFetchCategories()
-  }, [props])
+  }, [props, type])
 
   return (
     <React.Fragment>
@@ -38,6 +47,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onFetchPosts: () => dispatch(fetchPosts()),
+    onDeletePost: (postId) => dispatch(deletePost(postId)),
     onFetchCategories: () => dispatch(fetchCategories()),
     onFetchPostByAuthor: (authorId) => dispatch(fetchPostsByAuthor(authorId)),
     onFetchPostsByCategory: (categoryId) =>

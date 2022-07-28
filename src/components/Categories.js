@@ -1,14 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 
 const Categories = ({ categories }) => {
+  const { url } = useRouteMatch()
   return (
     <ul className='sidebar'>
       {categories &&
         categories.map(({ id, title }) => {
-          return <li key={id}>{title}</li>
+          return (
+            <li key={id}>
+              <Link to={`${url}/${title}/${id}`} key={id}>
+                {title}
+              </Link>
+            </li>
+          )
         })}
+
       <Link to='/'>
         <li>All Posts</li>
       </Link>

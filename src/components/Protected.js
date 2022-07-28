@@ -8,7 +8,7 @@ const Protected = ({ user, children, ...rest }) => (
       user ? (
         children
       ) : (
-        <Redirect to={{ pathname: '/login', state: { from: location } }} />
+        <Redirect to={{ pathname: '/signin', state: { from: location } }} />
       )
     }
   />
