@@ -10,33 +10,41 @@ const Post = memo(({ post, user, onDeletePost }) => {
   return (
     <React.Fragment>
       {post &&
-        post.map(({ id, title, content, author, categories, timestamp }) => {
-          return (
-            <div className='post' key={id}>
-              <div>
-                <h1>{title}</h1>
-                {user ? (
-                  <DeletePostButton
-                    onConfirm={() => {
-                      onDeletePost(id)
-                    }}
-                  />
-                ) : null}
-                <h3>
-                  by{' '}
-                  <Link to='/' key={id} style={{ color: 'rgb(89, 97, 206)' }}>
-                    {author.name} | {categories.title}
-                  </Link>{' '}
-                  | Posted on{' '}
-                  <span>
-                    {moment(timestamp).format('dddd, MMMM Do YYYY, h:mm:ss a')}
-                  </span>
-                </h3>
-                <p>{content}</p>
+        post.map(
+          ({ id, title, content, author, categories, timestamp, authorId }) => {
+            return (
+              <div className='post' key={id}>
+                <div>
+                  <h1>{title}</h1>
+                  {user ? (
+                    <DeletePostButton
+                      onConfirm={() => {
+                        onDeletePost(id)
+                      }}
+                    />
+                  ) : null}
+                  <h3>
+                    by{' '}
+                    <Link
+                      to={`/author/${authorId}`}
+                      key={authorId}
+                      style={{ color: 'rgb(89, 97, 206)' }}
+                    >
+                      {author.name} | {categories.title}
+                    </Link>{' '}
+                    | Posted on{' '}
+                    <span>
+                      {moment(timestamp).format(
+                        'dddd, MMMM Do YYYY, h:mm:ss a'
+                      )}
+                    </span>
+                  </h3>
+                  <p>{content}</p>
+                </div>
               </div>
-            </div>
-          )
-        })}
+            )
+          }
+        )}
     </React.Fragment>
   )
 })
@@ -56,19 +64,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Post)
-
-// <Switch>
-//         <Route path={`${path}/:author/:authorId`}>
-//           <Posts type='author' />
-//         </Route>
-//       </Switch>
-// {
-//   ;`${url}/${author.name}/${authorId}`
-// }
-// key = { authorId }
-
-// const { url } = useRouteMatch()
-
-// {
-//   user ? <DeletePostButton onConfirm={() => onDeletePost(id)} /> : null
-// }

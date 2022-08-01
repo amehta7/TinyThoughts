@@ -47,3 +47,5 @@ const posts = (state = initialState, action) => {
 }
 
 export default posts
+
+// id: uuid(),

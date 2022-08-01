@@ -27,7 +27,7 @@ const AddPost = memo(({ onAddPost, user }) => {
       {
         authorId: user.id,
         title: title,
-        categoriesId: select.optionElementId,
+        categoriesId: select,
         content: content,
       },
       history

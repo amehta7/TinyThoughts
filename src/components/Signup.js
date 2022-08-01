@@ -86,7 +86,13 @@ const Signup = ({ error, onSignUp }) => {
           onClick={() => {
             return (
               <React.Fragment>
-                {!error ? onSignUp(name, email, password, history) : null}
+                {!error &&
+                  name &&
+                  email &&
+                  password &&
+                  rePassword &&
+                  password === rePassword &&
+                  onSignUp(name, email, password, history)}
                 {!error ? setSubmitted(true) : null}
               </React.Fragment>
             )

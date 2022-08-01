@@ -24,22 +24,23 @@ const App = ({ user, onInitUserState }) => {
             <Route exact path='/'>
               <Posts />
             </Route>
-            <Route path='/category/:categoryId'>
+            <Route path='/category/:id'>
               <Posts type='category' />
             </Route>
 
             <Route path='/author/:authorId'>
               <Posts type='author' />
             </Route>
-            <Protected user={user} path='/add'>
-              <AddPost />
-            </Protected>
+
             <Unprotected user={user} path='/signin'>
               <Signin />
             </Unprotected>
             <Unprotected user={user} path='/signup'>
               <Signup />
             </Unprotected>
+            <Protected user={user} path='/add'>
+              <AddPost />
+            </Protected>
             <Route path='*'>
               <NoMatch />
             </Route>
