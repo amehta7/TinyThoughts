@@ -10,14 +10,16 @@ const AddPost = memo(({ onAddPost, user }) => {
   const history = useHistory()
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
-  const [select, setSelect] = useState('')
-
+  const [select, setSelect] = useState()
+  const [selId, setSelId] = useState()
   const handleChange = (event) => {
     setSelect(event.target.value)
+
     const index = event.target.selectedIndex
     const optionElement = event.target.childNodes[index]
     const optionElementId = optionElement.getAttribute('id')
-    setSelect(optionElementId)
+    setSelId(optionElementId)
+
     console.log(optionElementId)
   }
 
@@ -27,7 +29,7 @@ const AddPost = memo(({ onAddPost, user }) => {
       {
         authorId: user.id,
         title: title,
-        categoriesId: select,
+        categoriesId: selId,
         content: content,
       },
       history
@@ -42,23 +44,22 @@ const AddPost = memo(({ onAddPost, user }) => {
             label='Title'
             type='text'
             value={title}
-            hasError={false}
             onInput={(e) => setTitle(e.target.value)}
           />
           <Text
             label='Type in your thoughts in 200 words or less'
             type='text'
-            hasError={false}
             maxLength={200}
             value={content}
-            onUpdate={(e) => setContent(e.target.value)}
+            onUpdate={(e) =>
+              setContent(e.target.value.replace(/(?:\\r)/g, '\\n\\n'))
+            }
           />
-          <div className='char-count'>{content.length} of 200 characters</div>
+          <div className='char-count'>{content.length} of 200 Characters</div>
           <Select
             label='Select a category'
             value={select}
             onSet={handleChange}
-            hasError={false}
           />
           <button id='add-post-btn'>+ Add</button>
         </div>
@@ -83,12 +84,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddPost)
-
-// const [post, setPost] = useState({})
-
-// const handlePostData = (e) => {
-//   setPost({
-//     ...post,
-//     [e.currentTarget.id]: e.currentTarget.value,
-//   })
-// }
