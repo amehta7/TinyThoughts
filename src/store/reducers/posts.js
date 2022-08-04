@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid'
+//import { v4 as uuid } from 'uuid'
 
 const initialState = {
   posts: [],
@@ -16,8 +16,8 @@ const posts = (state = initialState, action) => {
 
     case 'DELETE_POSTS_SUCCESS': {
       return {
-        posts: [state.posts.filter((post) => post.id !== action.id)],
         ...state,
+        posts: action.posts,
       }
     }
     case 'GET_CATEGORIES_SUCCESS': {
@@ -28,13 +28,13 @@ const posts = (state = initialState, action) => {
     }
     case 'ADD_POST_SUCCESS': {
       let newPost = {
-        id: uuid(),
         authorId: action.posts.authorId,
         title: action.posts.title,
         categoriesId: action.posts.categoriesId,
         content: action.posts.content,
-        timestamp: new Date(),
+        timestamp: action.posts.timestamp,
       }
+
       return {
         ...state,
         posts: [newPost, ...state.posts],
@@ -49,3 +49,5 @@ const posts = (state = initialState, action) => {
 export default posts
 
 // id: uuid(),
+
+//posts: [state.posts.filter((post) => post.id !== action.id)],

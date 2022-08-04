@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AccountNav component Renders the Signin and Signup buttons when logged out 1`] = `
+exports[`AccountNav component Renders the Signin and Signup buttons when logged out`] = `
 <Memo()>
   <div
     className="account-nav"
@@ -45,7 +45,57 @@ exports[`AccountNav component Renders the Signin and Signup buttons when logged 
 </Memo()>
 `;
 
-exports[`AccountNav component Renders the Signout button & user's name when logged in 1`] = `
+exports[`AccountNav component Renders the Signin and Signup buttons when logged out 1`] = `
+<Connect(Component)>
+  <Memo()
+    onSignOut={[Function]}
+  >
+    <div
+      className="account-nav"
+    >
+      <ul>
+        <li>
+          <Link
+            to="/signin"
+          >
+            <LinkAnchor
+              href="/signin"
+              navigate={[Function]}
+            >
+              <a
+                href="/signin"
+                onClick={[Function]}
+              >
+                Signin
+              </a>
+            </LinkAnchor>
+          </Link>
+        </li>
+        <li>
+           
+          <Link
+            to="/signup"
+          >
+            <LinkAnchor
+              href="/signup"
+              navigate={[Function]}
+            >
+              <a
+                href="/signup"
+                onClick={[Function]}
+              >
+                Signup
+              </a>
+            </LinkAnchor>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </Memo()>
+</Connect(Component)>
+`;
+
+exports[`AccountNav component Renders the Signout button & user's name when logged in`] = `
 <Memo()>
   <div
     className="account-nav"
@@ -62,4 +112,47 @@ exports[`AccountNav component Renders the Signout button & user's name when logg
     </ul>
   </div>
 </Memo()>
+`;
+
+exports[`AccountNav component Renders the Signout button & user's name when logged in 1`] = `
+<Connect(Component)>
+  <Memo()
+    onSignOut={[Function]}
+    user={
+      Object {
+        "id": 1,
+        "name": "Joe Mockery",
+      }
+    }
+  >
+    <div
+      className="account-nav"
+    >
+      <h4>
+        Joe Mockery
+      </h4>
+      <ul>
+        <li>
+          <Link
+            onClick={[Function]}
+            to="/"
+          >
+            <LinkAnchor
+              href="/"
+              navigate={[Function]}
+              onClick={[Function]}
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Signout
+              </a>
+            </LinkAnchor>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </Memo()>
+</Connect(Component)>
 `;

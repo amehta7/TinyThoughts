@@ -16,13 +16,14 @@ const Post = memo(({ post, user, onDeletePost }) => {
               <div className='post' key={id}>
                 <div>
                   <h1>{title}</h1>
-                  {user ? (
+                  {!user ? null : Number(user.id) === Number(authorId) ? (
                     <DeletePostButton
                       onConfirm={() => {
                         onDeletePost(id)
                       }}
                     />
                   ) : null}
+
                   <h3>
                     by{' '}
                     <Link

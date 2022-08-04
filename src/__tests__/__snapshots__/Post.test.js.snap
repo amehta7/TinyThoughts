@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Post component Renders a post correctly 1`] = `
+exports[`Post component Renders a post correctly`] = `
 <Memo()
   post={
     Object {

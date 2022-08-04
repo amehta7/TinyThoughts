@@ -11,7 +11,6 @@ const Signin = ({ onSignUser, user, error }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [submitted, setSubmitted] = useState(false)
-  // const [userData, setUserData] = useState(null)
 
   return (
     <div className='sign-in'>

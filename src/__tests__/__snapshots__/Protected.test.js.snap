@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Protected Component Renders protected components when signed in 1`] = `
+exports[`Protected Component Renders protected components when signed in`] = `
 <Protected>
   <Route
     render={[Function]}
@@ -8,6 +8,34 @@ exports[`Protected Component Renders protected components when signed in 1`] = `
     <h1>
       DEMO CONTENT
     </h1>
+  </Route>
+</Protected>
+`;
+
+exports[`Protected Component Renders protected components when signed in 1`] = `
+<Protected>
+  <Route
+    render={[Function]}
+  >
+    <mockConstructor
+      to={
+        Object {
+          "pathname": "/signin",
+          "state": Object {
+            "from": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          },
+        }
+      }
+    >
+      <span>
+        REDIRECTED
+      </span>
+    </mockConstructor>
   </Route>
 </Protected>
 `;

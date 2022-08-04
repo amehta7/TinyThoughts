@@ -6,12 +6,12 @@ import { connect } from 'react-redux'
 import { addPost } from '../store/actions/index'
 import { useHistory } from 'react-router-dom'
 
-const AddPost = memo(({ onAddPost, user }) => {
+const AddPost = memo(({ onAddPost, user, error }) => {
   const history = useHistory()
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
-  const [select, setSelect] = useState()
-  const [selId, setSelId] = useState()
+  const [select, setSelect] = useState('JavaScript')
+  const [selId, setSelId] = useState('1')
   const handleChange = (event) => {
     setSelect(event.target.value)
 
@@ -25,15 +25,18 @@ const AddPost = memo(({ onAddPost, user }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    onAddPost(
-      {
-        authorId: user.id,
-        title: title,
-        categoriesId: selId,
-        content: content,
-      },
-      history
-    )
+    if (user && !error) {
+      onAddPost(
+        {
+          authorId: Number(user.id),
+          title: title,
+          categoriesId: Number(selId),
+          content: content,
+          timestamp: new Date(),
+        },
+        history
+      )
+    }
   }
   return (
     <div className='add-post'>

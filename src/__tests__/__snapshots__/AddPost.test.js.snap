@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddPost component Renders the AddPost component successfully 1`] = `
+exports[`AddPost component Renders the AddPost component successfully`] = `
 <Memo()>
   <div
     className="add-post"
@@ -119,4 +119,153 @@ exports[`AddPost component Renders the AddPost component successfully 1`] = `
     </div>
   </div>
 </Memo()>
+`;
+
+exports[`AddPost component Renders the AddPost component successfully 1`] = `
+<Connect(Component)>
+  <Memo()
+    categories={
+      Array [
+        Object {
+          "id": 1,
+          "title": "JavaScript",
+        },
+        Object {
+          "id": 2,
+          "title": "Python",
+        },
+      ]
+    }
+    error={false}
+    onAddPost={[Function]}
+    user={
+      Object {
+        "id": 1,
+        "name": "Joe Mockery",
+      }
+    }
+  >
+    <div
+      className="add-post"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <h2>
+          New Post
+        </h2>
+        <div
+          className="add-post-form"
+        >
+          <Input
+            label="Title"
+            onInput={[Function]}
+            type="text"
+            value=""
+          >
+            <div
+              className="input-box"
+            >
+              <span
+                className="label"
+              >
+                Title
+              </span>
+              <input
+                onChange={[Function]}
+                type="text"
+                value=""
+              />
+            </div>
+          </Input>
+          <Text
+            label="Type in your thoughts in 200 words or less"
+            maxLength={200}
+            onUpdate={[Function]}
+            type="text"
+            value=""
+          >
+            <div
+              className="text-box"
+            >
+              <span
+                className="label"
+              >
+                Type in your thoughts in 200 words or less
+              </span>
+              <textarea
+                maxLength={200}
+                onChange={[Function]}
+                type="textarea"
+                value=""
+              />
+            </div>
+          </Text>
+          <div
+            className="char-count"
+          >
+            0
+             of 200 Characters
+          </div>
+          <Connect(Select)
+            label="Select a category"
+            onSet={[Function]}
+            value="JavaScript"
+          >
+            <Select
+              categories={
+                Array [
+                  Object {
+                    "id": 1,
+                    "title": "JavaScript",
+                  },
+                  Object {
+                    "id": 2,
+                    "title": "Python",
+                  },
+                ]
+              }
+              dispatch={[Function]}
+              label="Select a category"
+              onSet={[Function]}
+              value="JavaScript"
+            >
+              <div
+                className="select-list"
+              >
+                <span
+                  className="label"
+                >
+                  Select a category
+                </span>
+                <select
+                  onChange={[Function]}
+                  value="JavaScript"
+                >
+                  <option
+                    id={1}
+                    key="1"
+                  >
+                    JavaScript
+                  </option>
+                  <option
+                    id={2}
+                    key="2"
+                  >
+                    Python
+                  </option>
+                </select>
+              </div>
+            </Select>
+          </Connect(Select)>
+          <button
+            id="add-post-btn"
+          >
+            + Add
+          </button>
+        </div>
+      </form>
+    </div>
+  </Memo()>
+</Connect(Component)>
 `;
