@@ -18,6 +18,85 @@ exports[`Categories component Categories component renders a list of categories 
   <ul
     className="sidebar"
   >
+    <li
+      key="1"
+    >
+      <Link
+        key="1"
+        to="/category/1"
+      >
+        <LinkAnchor
+          href="/category/1"
+          navigate={[Function]}
+        >
+          <a
+            href="/category/1"
+            onClick={[Function]}
+          >
+            JavaScript
+          </a>
+        </LinkAnchor>
+      </Link>
+    </li>
+    <li
+      key="2"
+    >
+      <Link
+        key="2"
+        to="/category/2"
+      >
+        <LinkAnchor
+          href="/category/2"
+          navigate={[Function]}
+        >
+          <a
+            href="/category/2"
+            onClick={[Function]}
+          >
+            Python
+          </a>
+        </LinkAnchor>
+      </Link>
+    </li>
+    <Link
+      to="/"
+    >
+      <LinkAnchor
+        href="/"
+        navigate={[Function]}
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          <li>
+            All Posts
+          </li>
+        </a>
+      </LinkAnchor>
+    </Link>
+  </ul>
+</Categories>
+`;
+
+exports[`Categories component renders a list of categories`] = `
+<Categories
+  categories={
+    Array [
+      Object {
+        "id": 1,
+        "title": "JavaScript",
+      },
+      Object {
+        "id": 2,
+        "title": "Python",
+      },
+    ]
+  }
+>
+  <ul
+    className="sidebar"
+  >
     <Link
       key="1"
       to="/category/1"

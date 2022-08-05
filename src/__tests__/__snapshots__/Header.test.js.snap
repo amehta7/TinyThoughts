@@ -14,6 +14,201 @@ exports[`Header component Header component renders correctly when signed in 1`] 
       className="app-nav"
     >
       <ul>
+        <li>
+          <Link
+            to="/"
+          >
+            <LinkAnchor
+              href="/"
+              navigate={[Function]}
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Home
+              </a>
+            </LinkAnchor>
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/add"
+          >
+            <LinkAnchor
+              href="/add"
+              navigate={[Function]}
+            >
+              <a
+                href="/add"
+                onClick={[Function]}
+              >
+                New Post
+              </a>
+            </LinkAnchor>
+          </Link>
+        </li>
+      </ul>
+    </div>
+    <Connect(Component)>
+      <Memo()
+        onSignOut={[Function]}
+        user={
+          Object {
+            "id": 1,
+            "name": "Joe Mockery",
+          }
+        }
+      >
+        <div
+          className="account-nav"
+        >
+          <h4>
+            Joe Mockery
+          </h4>
+          <ul>
+            <li>
+              <Link
+                onClick={[Function]}
+                to="/"
+              >
+                <LinkAnchor
+                  href="/"
+                  navigate={[Function]}
+                  onClick={[Function]}
+                >
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                  >
+                    Signout
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </Memo()>
+    </Connect(Component)>
+  </div>
+</Header>
+`;
+
+exports[`Header component Header component renders correctly when signed out 1`] = `
+<Header>
+  <div
+    className="header"
+  >
+    <div
+      className="app-title"
+    >
+      TinyThoughts
+    </div>
+    <div
+      className="app-nav"
+    >
+      <ul>
+        <li>
+          <Link
+            to="/"
+          >
+            <LinkAnchor
+              href="/"
+              navigate={[Function]}
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Home
+              </a>
+            </LinkAnchor>
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/add"
+          >
+            <LinkAnchor
+              href="/add"
+              navigate={[Function]}
+            >
+              <a
+                href="/add"
+                onClick={[Function]}
+              >
+                New Post
+              </a>
+            </LinkAnchor>
+          </Link>
+        </li>
+      </ul>
+    </div>
+    <Connect(Component)>
+      <Memo()
+        onSignOut={[Function]}
+      >
+        <div
+          className="account-nav"
+        >
+          <ul>
+            <li>
+              <Link
+                to="/signin"
+              >
+                <LinkAnchor
+                  href="/signin"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/signin"
+                    onClick={[Function]}
+                  >
+                    Signin
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </li>
+            <li>
+               
+              <Link
+                to="/signup"
+              >
+                <LinkAnchor
+                  href="/signup"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/signup"
+                    onClick={[Function]}
+                  >
+                    Signup
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </Memo()>
+    </Connect(Component)>
+  </div>
+</Header>
+`;
+
+exports[`Header component renders correctly when signed in`] = `
+<Header>
+  <div
+    className="header"
+  >
+    <div
+      className="app-title"
+    >
+      TinyThoughts
+    </div>
+    <div
+      className="app-nav"
+    >
+      <ul>
         <Link
           to="/"
         >
@@ -70,7 +265,7 @@ exports[`Header component Header component renders correctly when signed in 1`] 
 </Header>
 `;
 
-exports[`Header component Header component renders correctly when signed out 1`] = `
+exports[`Header component renders correctly when signed out`] = `
 <Header>
   <div
     className="header"

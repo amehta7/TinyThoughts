@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Select component Renders a controlled component 1`] = `
+exports[`Renders a controlled component`] = `
 <div
   className="select-list"
 >
@@ -34,7 +34,7 @@ exports[`Select component Renders a controlled component 1`] = `
 </div>
 `;
 
-exports[`Select component Renders a red border when hasError is set to true 1`] = `
+exports[`Renders a red border when hasError is set to true`] = `
 <div
   className="select-list hasError"
 >

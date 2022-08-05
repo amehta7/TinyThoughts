@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Input from './Input'
 import { connect } from 'react-redux'
 import { signIn } from '../store/actions/index'
 import { useHistory, useLocation } from 'react-router-dom'
 
 const Signin = ({ onSignUser, user, error }) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
   const history = useHistory()
   const location = useLocation()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [submitted, setSubmitted] = useState(false)
-  // const [userData, setUserData] = useState(null)
 
   return (
     <div className='sign-in'>
@@ -24,7 +24,13 @@ const Signin = ({ onSignUser, user, error }) => {
           onInput={(e) => setEmail(e.target.value)}
         />
 
-        {submitted && !email && <div>Email is required</div>}
+        {submitted && !email && (
+          <div style={{ color: 'red' }}>Email is required</div>
+        )}
+        <br />
+        {submitted && !regex.test(email) && (
+          <div style={{ color: 'red' }}>This is not a valid email format!</div>
+        )}
 
         <Input
           label='Password'
@@ -33,19 +39,26 @@ const Signin = ({ onSignUser, user, error }) => {
           value={password}
           onInput={(e) => setPassword(e.target.value)}
         />
-        {submitted && !password && <div>Password is required</div>}
+        {submitted && !password && (
+          <div style={{ color: 'red' }}>Password is required</div>
+        )}
         <button
           id='add-post-btn'
           onClick={() => {
-            onSignUser(email, password, history, location)
-
-            setSubmitted(true)
+            return (
+              <React.Fragment>
+                {!error ? onSignUser(email, password, history, location) : null}
+                {!error ? setSubmitted(true) : null}
+              </React.Fragment>
+            )
           }}
         >
           Go!
         </button>
-
-        {error && 'Incorrect username/password '}
+        <br />
+        {error && (
+          <div style={{ color: 'red' }}>Incorrect username/password</div>
+        )}
       </div>
     </div>
   )

@@ -1,32 +1,63 @@
 import React, { memo, useEffect } from 'react'
-
+import { useParams } from 'react-router-dom'
 import Categories from './Categories'
 import Post from './Post'
 
 import { connect } from 'react-redux'
 import {
   fetchPosts,
+  deletePost,
   fetchCategories,
   fetchPostsByAuthor,
   fetchPostsByCategory,
 } from '../store/actions/index'
 
-const Posts = memo((props, type) => {
-  useEffect(() => {
-    props.onFetchPosts()
-    props.onFetchCategories()
-  }, [props])
+const Posts = memo(
+  ({
+    type,
+    posts,
+    categories,
+    onFetchPosts,
+    onFetchCategories,
+    onFetchPostByAuthor,
+    onFetchPostsByCategory,
+  }) => {
+    const { id } = useParams(Categories)
+    const { authorId } = useParams(Post)
 
-  return (
-    <React.Fragment>
-      <Categories categories={props.categories} />
+    useEffect(() => {
+      onFetchCategories()
+      onFetchPosts()
+    }, [onFetchCategories, onFetchPosts])
 
-      <div className='content'>
-        <Post post={props.posts} />
-      </div>
-    </React.Fragment>
-  )
-})
+    useEffect(() => {
+      if (type === 'author') {
+        onFetchPostByAuthor(authorId)
+      } else if (type === 'category') {
+        onFetchPostsByCategory(id)
+      } else {
+        onFetchPosts()
+      }
+    }, [
+      authorId,
+      id,
+      onFetchPostByAuthor,
+      onFetchPosts,
+      onFetchPostsByCategory,
+      type,
+    ])
+
+    return (
+      <React.Fragment>
+        <Categories categories={categories} />
+
+        <div className='content'>
+          <Post post={posts} />
+        </div>
+      </React.Fragment>
+    )
+  }
+)
 
 const mapStateToProps = (state) => {
   return {
@@ -38,6 +69,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onFetchPosts: () => dispatch(fetchPosts()),
+    onDeletePost: (postId) => dispatch(deletePost(postId)),
     onFetchCategories: () => dispatch(fetchCategories()),
     onFetchPostByAuthor: (authorId) => dispatch(fetchPostsByAuthor(authorId)),
     onFetchPostsByCategory: (categoryId) =>
@@ -46,26 +78,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Posts)
-
-// {props.categories &&
-//   props.categories.map(({ id, title }) => {
-//     return (
-//       <Categories
-//         key={id}
-//         title={title}
-//         onClickHandler={() => {
-//           props.onFetchPostsByCategory(id)
-//         }}
-//       />
-//     )
-//   })}
-
-//  useEffect(() => {
-//    if (type === 'author') {
-//      props.onFetchPostByAuthor(authorId)
-//    } else if (type === 'category') {
-//      props.onFetchCategories()
-//    }
-//  }, [authorId, props, type])
-
-// const { authorId } = useParams()

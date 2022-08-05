@@ -98,8 +98,7 @@ export const addPost = (post, history) => (dispatch) =>
   addPostAndFetch(post)
     .then((post) => {
       console.log(post)
-      dispatch({ type: 'ADD_POST_SUCCESS', post })
-      history.push('/')
+      dispatch({ type: 'ADD_POST_SUCCESS', post }, history.push('/'))
     })
     .catch(() => {
       dispatch({

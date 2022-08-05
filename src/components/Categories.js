@@ -7,8 +7,15 @@ const Categories = ({ categories }) => {
     <ul className='sidebar'>
       {categories &&
         categories.map(({ id, title }) => {
-          return <li key={id}>{title}</li>
+          return (
+            <li key={id}>
+              <Link to={`/category/${id}`} key={id}>
+                {title}
+              </Link>
+            </li>
+          )
         })}
+
       <Link to='/'>
         <li>All Posts</li>
       </Link>

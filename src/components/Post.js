@@ -1,43 +1,67 @@
 import React, { memo } from 'react'
-// import PropTypes from "prop-types";
+
 import moment from 'moment'
-
+import DeletePostButton from './DeletePostButton'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { deletePost } from '../store/actions/index'
 
-const Post = memo(({ post }) => {
+const Post = memo(({ post, user, onDeletePost }) => {
   return (
     <React.Fragment>
       {post &&
-        post.map(({ id, title, content, author, categories, timestamp }) => {
-          return (
-            <div className='post' key={id}>
-              <div key={id}>
-                <h1>{title}</h1>
-                <h3>
-                  by {author.name} | {categories.title} | Posted on{' '}
-                  <span>
-                    {moment(timestamp).format('dddd, MMMM Do YYYY, h:mm:ss a')}
-                  </span>
-                </h3>
-                <p>{content}</p>
+        post.map(
+          ({ id, title, content, author, categories, timestamp, authorId }) => {
+            return (
+              <div className='post' key={id}>
+                <div>
+                  <h1>{title}</h1>
+                  {!user ? null : Number(user.id) === Number(authorId) ? (
+                    <DeletePostButton
+                      onConfirm={() => {
+                        onDeletePost(id)
+                      }}
+                    />
+                  ) : null}
+
+                  <h3>
+                    by{' '}
+                    <Link
+                      to={`/author/${authorId}`}
+                      key={authorId}
+                      style={{ color: 'rgb(89, 97, 206)' }}
+                    >
+                      {author.name} | {categories.title}
+                    </Link>{' '}
+                    | Posted on{' '}
+                    <span>
+                      {moment(timestamp).format(
+                        'dddd, MMMM Do YYYY, h:mm:ss a'
+                      )}
+                    </span>
+                  </h3>
+                  <p>{content}</p>
+                </div>
               </div>
-            </div>
-          )
-        })}
+            )
+          }
+        )}
     </React.Fragment>
   )
 })
 
-export default Post
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts.posts,
+    categories: state.posts.categories,
+    user: state.users.user,
+  }
+}
 
-// <Switch>
-//         <Route path={`${path}/:author/:authorId`}>
-//           <Posts type='author' />
-//         </Route>
-//       </Switch>
-// {
-//   ;`${url}/${author.name}/${authorId}`
-// }
-// key = { authorId }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onDeletePost: (postId) => dispatch(deletePost(postId)),
+  }
+}
 
-// const { url } = useRouteMatch()
+export default connect(mapStateToProps, mapDispatchToProps)(Post)
