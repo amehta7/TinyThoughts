@@ -1,7 +1,8 @@
-# TinyThoughts - Micro-Blog Application
+#### TinyThoughts - Micro-Blog Application
 
 - Live Site URL: [@Netlify](https://tinythoughts-react.netlify.app)
 
-- This application will bring together React, React Router & Redux as we work with a pre-built API.
-- Some of the core features of the application includes authentication (signup and signin),
-sorting posts by category and author, creating new posts and deleting posts.
+- A dynamic micro-blog application that seamlessly integrated React, React Router, and Redux.
+- The project involved building a user-friendly interface to allow users to create, browse, and manage posts across different categories.
+- Core features included user authentication, post sorting by category and author, post creation, and deletion.
+
